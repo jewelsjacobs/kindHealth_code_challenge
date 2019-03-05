@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "docker ps -q -a | xargs docker stop"
+docker ps -q -a | xargs docker stop
+echo "docker ps -q -a | xargs docker rm"
+docker ps -q -a | xargs docker rm
+echo "docker images -q | xargs docker rmi -f"
+docker images -q | xargs docker rmi -f

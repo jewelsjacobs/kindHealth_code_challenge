@@ -1,0 +1,10 @@
+#! /usr/bin/env sh
+
+if [ "$NODE_ENV" = "test" ]
+then
+  npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all
+  esw server & jest --watchAll
+else
+  npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all
+  nodemon --inspect ./bin/www --watch app.js --watch server --watch .sequelizerc --watch server/config/config.json
+fi

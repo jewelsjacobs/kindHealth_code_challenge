@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ "$NODE_ENV" = "test" ]
+then
+POSTGRES_DB=events_test DATABASE_URL=postgres://postgres@postgres/events_test docker-compose exec api sh -c 'npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all'
+else
+POSTGRES_DB=events_dev DATABASE_URL=postgres://postgres@postgres/events_dev docker-compose exec api sh -c 'npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all'
+fi

@@ -1,0 +1,72 @@
+{
+  "name": "code_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sh ./bin/cleandocker && npm run start:docker",
+    "test": "sh ./bin/cleandocker && npm run start:docker:test",
+    "start:docker": "NODE_ENV=development POSTGRES_DB=events_dev DATABASE_URL=postgres://postgres@postgres/events_dev docker-compose up",
+    "start:docker:test": "NODE_ENV=test POSTGRES_DB=events_test DATABASE_URL=postgres://postgres@postgres/events_test docker-compose up",
+    "start:script": "sh ./bin/start",
+    "db:migrate": "sh ./bin/dbmigrate",
+    "db:seed": "sh ./bin/dbseed",
+    "db:console": "sh ./bin/dbconsole"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.8.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.43.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-watch": "^4.0.2",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "sequelize-cli": "^5.4.0",
+    "supertest": "^3.4.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// This is the main application start script defined in the package.json.
+// It launches the express server.
+
+const http = require('http');
+const app = require('../app');
+
+// default port is 8000, assign custom port with PORT environment variable
+const port = parseInt(process.env.PORT, 10) || 8000;
+
+app.set('port', port);
+
+const server = http.createServer(app);
+server.listen(port);
