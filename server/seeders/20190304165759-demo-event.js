@@ -3,7 +3,7 @@
 const faker = require('faker');
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: (queryInterface) => {
     const amountOfEvents = 50;
     const events = [];
     for (let i = 0; i < amountOfEvents; i++) {
@@ -26,7 +26,7 @@ module.exports = {
     return queryInterface.bulkInsert('events', events, {});
   },
 
-  down: (queryInterface, Sequelize) => {
+  down: (queryInterface) => {
     return queryInterface.bulkDelete('events', null, {});
   }
 };

@@ -8,7 +8,7 @@ const app = express();
 // simple error handler
 function errorHandler (err, req, res, next) {
   if (res.headersSent) {
-    return next(err)
+    return next(err);
   }
   res.status(500).res.json({
     status: "error"
