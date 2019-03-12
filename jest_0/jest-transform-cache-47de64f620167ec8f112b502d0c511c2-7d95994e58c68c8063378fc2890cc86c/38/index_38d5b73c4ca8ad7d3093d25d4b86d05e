@@ -1,7 +1,0 @@
-475b520bde67e496119e76f10c147c48
-const events = require('./events');
-
-module.exports = {
-  events
-};
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImV2ZW50cyIsInJlcXVpcmUiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQSxNQUFNQSxNQUFNLEdBQUdDLE9BQU8sQ0FBQyxVQUFELENBQXRCOztBQUVBQyxNQUFNLENBQUNDLE9BQVAsR0FBaUI7QUFDZkgsRUFBQUE7QUFEZSxDQUFqQiIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGV2ZW50cyA9IHJlcXVpcmUoJy4vZXZlbnRzJyk7XG5cbm1vZHVsZS5leHBvcnRzID0ge1xuICBldmVudHNcbn07XG4iXX0=
