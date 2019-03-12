@@ -2,7 +2,7 @@
 
 if [ "$NODE_ENV" = "test" ]
 then
-  npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all
+  npx sequelize db:migrate:undo:all && npx sequelize db:migrate
   esw server & jest --watchAll
 else
   npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all

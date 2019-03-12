@@ -1,8 +1,10 @@
 # Code Challenge
 
 ## Uses
-- [Sequalize](http://docs.sequelizejs.com/manual/tutorial/migrations.html)
+- [Sequalize](http://docs.sequelizejs.com/manual/tutorial/migrations.html
+- [Sequalize fixtures](https://github.com/modestfake/sequelize-fixtures)
 - [Docker Compose](https://docs.docker.com/compose/)
+- [Jest as a test runner and assertion library](https://jestjs.io/)
 
 Runs with a postgresDB in a docker container
 
@@ -15,8 +17,6 @@ $ npm start
 ```
 
 ## Run tests
-
-**NOTE:** I didnt have time to fix the tests. You can run them but they are broken.
 
 ```bash
 $ npm test
@@ -36,24 +36,21 @@ You can also access the DB via a GUI using the following:
 - **user:** postgres
 - **no password, just leave it blank**
 
-### Migrate and Seed Db:
-
-Good to run after `npm start` and `npm test`
-
-```bash
-$ npm run db:migrate
-$ npm run db:seed
-```
-or 
-
-```bash
-$ NODE_ENV=development ./bin/dbbuild
-```
-
 ## API
 
-- POST http://localhost:8000/events
-- GET http://localhost:8000/events?from=2019-02-10T21:03:34Z&to=2019-02-25T21:03:34Z
-- POST http://localhost:8000/events/clear
-- GET http://localhost:8000/events/summary?from=2019-02-10T21:03:34Z&to=2019-02-25T21:03:34Z&by=hour
+```bash
+
+curl -X GET 'http://localhost:8000/events/summary?from=2019-02-10T21:03:34Z&to=2019-02-25T21:03:34Z&by=hour'
+
+curl -X GET 'http://localhost:8000/events?from=2019-02-10T21:03:34Z&to=2019-02-25T21:03:34Z&by=hour'
+
+curl -X POST \
+  http://localhost:8000/events \
+  -H 'Content-Type: application/json' \
+  -d '{"date": "1985-10-26T09:00:00Z", "user": "Doc", "type": "enter"}'
+  
+curl -X POST http://localhost:8000/events/clear
+
+```
+
 

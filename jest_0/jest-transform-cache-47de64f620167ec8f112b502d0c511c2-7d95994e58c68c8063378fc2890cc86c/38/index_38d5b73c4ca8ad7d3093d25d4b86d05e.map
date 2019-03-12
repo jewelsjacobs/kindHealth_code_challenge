@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["events","require","module","exports"],"mappings":"AAAA,MAAMA,MAAM,GAAGC,OAAO,CAAC,UAAD,CAAtB;;AAEAC,MAAM,CAACC,OAAP,GAAiB;AACfH,EAAAA;AADe,CAAjB","sourcesContent":["const events = require('./events');\n\nmodule.exports = {\n  events\n};\n"]}
