@@ -1,7 +1,7 @@
 # Code Challenge
 
 ## Uses
-- [Sequalize](http://docs.sequelizejs.com/manual/tutorial/migrations.html
+- [Sequalize](http://docs.sequelizejs.com/manual/tutorial/migrations.html)
 - [Sequalize fixtures](https://github.com/modestfake/sequelize-fixtures)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Jest as a test runner and assertion library](https://jestjs.io/)
